@@ -15,7 +15,7 @@ public class Game {
         player = new Player(room.getPlayerStart());
         boxes = room.getBoxes();
         enemies = room.getEnemies();
-    }
+
 
     // prints a help menu to the left of the map
     private void showHelp() {
@@ -207,5 +207,38 @@ public class Game {
             }
         }
     }
+    public void savedata(){
+	    printwriter out;
+	    try {
+		File F = new File("savefile.txt");
+		out = new Printwriter(F);
+	    }
+	    catch (FileNotFoundException e){
+		    System.out.println("File not found. Please try again.");
+	    }
+	    world.save(out);
+	    player.save(out);
+            for (Enemy e: enemies){
+		e.save(out);
+       	   }
+	   out.close(); 	
+    }
+   public void loaddata(){
+	  Scanner in;
+	  try {
+		 File f = new File("savefile.txt");
+		 in = new Scanner(f);
+	  } catch (FileNotFoundException e){
+		  System.out.println("File not found. Please try again.");
+	  }
+	 world = new World(in);
+	 Player = new Player(in);
+	 while (in.hasNextLine()){
+		 Enemy e = new Enemy(in);
+		 enemies.add(e);
+	 }
+   } 
+   
+	 
 }
 
