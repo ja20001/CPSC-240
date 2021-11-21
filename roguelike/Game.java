@@ -15,6 +15,10 @@ public class Game {
         player = new Player(room.getPlayerStart());
         boxes = room.getBoxes();
         enemies = room.getEnemies();
+    }
+    
+    
+    
 
 
     // prints a help menu to the left of the map
@@ -22,7 +26,7 @@ public class Game {
         String[] cmds = {"Commands:",
                          "---------",
                          "Move: Arrow Keys",
-                         "Pickup an item: p",
+                         "Pick up an item: p",
                          "Drop an item: d",
                          "List items: l",
                          "Equip weapon: w",
@@ -35,7 +39,7 @@ public class Game {
             System.out.print(cmds[row]);
         }
         Terminal.reset();
-    }
+    } 
 
     // right under the map we keep a line for status messages
     private void setStatus(String mesg) {
@@ -238,7 +242,7 @@ public class Game {
 		 enemies.add(e);
 	 }
    } 
-   
+    
 	 
 }
 
