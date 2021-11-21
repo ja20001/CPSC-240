@@ -23,6 +23,7 @@ public class Game {
 
     // prints a help menu to the left of the map
     private void showHelp() {
+	import ansi_terminal.*;    
         String[] cmds = {"Commands:",
                          "---------",
                          "Move: Arrow Keys",
@@ -43,6 +44,7 @@ public class Game {
 
     // right under the map we keep a line for status messages
     private void setStatus(String mesg) {
+	import ansi_terminal.*;
         // clear anything old first
         Terminal.warpCursor(room.getRows(), 0);
         for (int i = 0; i < 100; i++) {
@@ -56,6 +58,7 @@ public class Game {
 
     // code for when the player tries to pickup an item
     private void pickup() {
+	import ansi_terminal.*;
         Box thing = checkForBox();
         if (thing == null) {
             setStatus("There is nothing here to pick up...");
@@ -73,6 +76,7 @@ public class Game {
 
     // code for when the player tries to drop an item
     private void drop() {
+	import ansi_terminal.*;
         if (checkForBox() == null) {
             Item dropped = player.getInventory().drop();
             if (dropped != null) {
