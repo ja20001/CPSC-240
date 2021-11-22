@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 import java.io.FileReader;
+import java.io.FileNotFoundException;
 public class Room {
     // the grid holds the room geometry
     private String[] grid;
@@ -20,12 +21,17 @@ public class Room {
     public Room(){
 	Scanner s = new Scanner(new FileReader("room.txt"));
 	Scanner in = new Scanner(System.in);
-	while (s.hasNext()) {
-		for(int i = 0; i < rows ; i++){
-			grid[i] = in.nextLine();
+	try{
+		while (s.hasNext()) {
+			for(int i = 0; i < rows ; i++){
+				grid[i] = in.nextLine();
+			}
 		}
 	}
-	
+	catch (FileNotFoundException e){
+		System.out.println("Error");
+		System.exit(-1);
+	}
         // this initializes the room to one specific space
         //rows = 30;
         //cols = 60;
