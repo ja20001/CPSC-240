@@ -4,7 +4,11 @@
 
 import java.util.ArrayList;
 import ansi_terminal.*;
-
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.util.List;
+import java.util.Scanner;
+import java.io.FileReader;
 public class Room {
     // the grid holds the room geometry
     private String[] grid;
@@ -13,45 +17,53 @@ public class Room {
     private int rows;
     private int cols;
 
-    public Room() {
+    public Room(String filename) throws Exception {
+	this.grid = new ArrayList<String>();
+	Scanner s = new Scanner(new FileReader(filename));
+	Scanner in = new Scanner();
+	while (s.hasNext()) {
+		String line = in.nextLine();
+		grid.add(line);
+	}
+	
         // this initializes the room to one specific space
-        rows = 30;
-        cols = 60;
+        //rows = 30;
+        //cols = 60;
 
         // the actual room geometry
         // the i cells refer to where an item should be placed at
-        grid  = new String[] {
-            "##################                ######################    ",
-            "##              ##                ##      i           ##    ",
-            "##  @           ###########       ##        *         ##    ",
-            "##                       ##       ##                  ##    ",
-            "##              #######  ##       ##################  ##    ",
-            "##              ##   ##  ##                       ##  ##    ",
-            "##################   ##  ##################       ##  ##    ",
-            "                     ##                  ##       ##  ##    ",
-            "                     ##   *  i           ##       ##  ##    ",
-            "                     ##                  ##       ##  ##    ",
-            "                     ##############  ######       ##  ##    ",
-            "                                 ##  ##           ##  ##    ",
-            "                                 ##  ##           ##  ##    ",
-            "                       ############  ###############  ######",
-            "                       ##                                 ##",
-            "                       ##                                 ##",
-            "    #####################                  *              ##",
-            "    ##                                                    ##",
-            "    ##  #################                                 ##",
-            "    ##  ##             ##                                 ##",
-            "    ##  ##             #################  ##################",
-            "    ##  ##                            ##  ##                ",
-            "    ##  ##                            ##  ##                ",
-            "    ##  ##                       #######  #######           ",
-            "    ##  ##                       ##            ##           ",
-            "######  ####                     ##  i  *      ##           ",
-            "##        ##                     ##            ##           ",
-            "## i  *   ##                     ################           ",
-            "##        ##                                                ",
-            "############                                                "
-        };
+        //grid  = new String[] {
+          //  "##################                ######################    ",
+          //  "##              ##                ##      i           ##    ",
+          //  "##  @           ###########       ##        *         ##    ",
+          //  "##                       ##       ##                  ##    ",
+          //  "##              #######  ##       ##################  ##    ",
+         //   "##              ##   ##  ##                       ##  ##    ",
+         //   "##################   ##  ##################       ##  ##    ",
+          //  "                     ##                  ##       ##  ##    ",
+          //  "                     ##   *  i           ##       ##  ##    ",
+          //  "                     ##                  ##       ##  ##    ",
+           // "                     ##############  ######       ##  ##    ",
+           // "                                 ##  ##           ##  ##    ",
+           // "                                 ##  ##           ##  ##    ",
+            //"                       ############  ###############  ######",
+           // "                       ##                                 ##",
+           // "                       ##                                 ##",
+           // "    #####################                  *              ##",
+          //  "    ##                                                    ##",
+          //  "    ##  #################                                 ##",
+         //   "    ##  ##             ##                                 ##",
+         //   "    ##  ##             #################  ##################",
+         //   "    ##  ##                            ##  ##                ",
+         //   "    ##  ##                            ##  ##                ",
+         //   "    ##  ##                       #######  #######           ",
+          //  "    ##  ##                       ##            ##           ",
+           // "######  ####                     ##  i  *      ##           ",
+           // "##        ##                     ##            ##           ",
+           // "## i  *   ##                     ################           ",
+          //  "##        ##                                                ",
+          //  "############                                                "
+      //  };
     }
 
     // returns the player's strting location in this room

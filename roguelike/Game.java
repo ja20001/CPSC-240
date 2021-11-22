@@ -3,7 +3,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 import ansi_terminal.*;
-
+import java.io.PrintWriter;
 public class Game {
     private Room room;
     private Player player;
@@ -215,7 +215,7 @@ public class Game {
 	    printwriter out;
 	    try {
 		File F = new File("savefile.txt");
-		out = new Printwriter(F);
+		out = new PrintWriter(F);
 	    }
 	    catch (FileNotFoundException e){
 		    System.out.println("File not found. Please try again.");
