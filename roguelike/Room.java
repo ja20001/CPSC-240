@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.io.FileReader;
 import java.io.FileNotFoundException;
+import java.io.FileInputStream;
 public class Room {
     // the grid holds the room geometry
     private String[] grid;
@@ -19,16 +20,17 @@ public class Room {
     private int cols;
 
     public Room(){
-	Scanner s = new Scanner(new FileReader("room.txt"));
+	Scanner input = null;
 	Scanner in = new Scanner(System.in);
 	try{
-		while (s.hasNext()) {
+		FileInputStream file = new FileInputStream("room.txt");
+		input = new Scanner(file);
+		while (input.hasNext()) {
 			for(int i = 0; i < rows ; i++){
 				grid[i] = in.nextLine();
 			}
 		}
-	}
-	catch (FileNotFoundException e){
+	}catch (FileNotFoundException e){
 		System.out.println("Error");
 		System.exit(-1);
 	}
