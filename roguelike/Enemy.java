@@ -68,11 +68,12 @@ public class Enemy extends Character {
     }
 
     public void savedata (PrintWriter out){
-	    out.println(health);
-	    out.println(str);
+	    out.println(name);
 	    out.println(row);
 	    out.println(col);
-	    out.println(type);
+	    out.println(hp);
+	    out.println(damage);
+	    out.println(protection);
     }
 }
 
