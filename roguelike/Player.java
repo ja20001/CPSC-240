@@ -16,6 +16,8 @@ public class Player extends Character {
         // TODO make up your own starting equipment!
         items.addAndEquip(new Item(ItemType.Weapon, "Sword of Baulr", 5, 12, 7));
         items.addAndEquip(new Item(ItemType.Armor, "Steel Strapped boots", 15, 20, 3));
+	items.addAndEquip(new Item(ItemType.Weapon, "Draglet Spear", 10, 10, 4));
+	items.addAndEquip(new Item(ItemType.Other, "Wonder Cape", 5, 15, 2)); 
     }
 
     @Override
