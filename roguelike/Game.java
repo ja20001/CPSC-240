@@ -1,6 +1,6 @@
 // Game.java
 // contains logic for running the Game
-
+import java.util.Scanner;
 import java.util.ArrayList;
 import ansi_terminal.*;
 

@@ -2,7 +2,8 @@
 
 import java.util.Random;
 import ansi_terminal.*;
-
+import java.util.ArrayList;
+import java.util.List;
 public class Enemy extends Character {
     private String name;
     private int damage;
