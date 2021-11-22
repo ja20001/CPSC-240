@@ -17,13 +17,13 @@ public class Room {
     private int rows;
     private int cols;
 
-    public Room(String filename) throws Exception {
-	this.grid = new ArrayList<String>();
-	Scanner s = new Scanner(new FileReader(filename));
-	Scanner in = new Scanner();
+    public Room(){
+	Scanner s = new Scanner(new FileReader("room.txt"));
+	Scanner in = new Scanner(System.in);
 	while (s.hasNext()) {
-		String line = in.nextLine();
-		grid.add(line);
+		for(int i = 0; i < rows ; i++){
+			grid[i] = in.nextLine();
+		}
 	}
 	
         // this initializes the room to one specific space
