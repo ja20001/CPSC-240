@@ -214,10 +214,10 @@ public class Game {
         }
     }
     public void savedata(){
-	    printwriter out;
+	    PrintWriter out;
 	    try {
 		File F = new File("savefile.txt");
-		out = new Printwriter(F);
+		out = new PrintWriter(F);
 	    }
 	    catch (FileNotFoundException e){
 		    System.out.println("File not found. Please try again.");
