@@ -11,8 +11,14 @@ public class EnemyGenerator {
 	    String name = enemyName[rng.nextInt(enemyName.length)];
 	    int health = rng.nextInt(21)+ 1;
 	    int damage = rng.nextInt(6) + 1;
+<<<<<<< HEAD
 	    int protection =rng.nextInt(6)+1;    
         return new Enemy(name, row, col, health, damage, protection);
+=======
+	    int protection =rng.nextInt(6)+1;
+    
+    	    return new Enemy(name, row, col, health, damage, protection);
+>>>>>>> 7da256170610793c2aa168990f4b11c78fbf2329
     }
 }
 
