@@ -4,9 +4,9 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import ansi_terminal.*;
 import java.io.PrintWriter;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileNotFoundException;
-
 
 public class Game {
     private Room room;
@@ -21,10 +21,6 @@ public class Game {
         enemies = room.getEnemies();
     }
     
-    
-    
-
-
     // prints a help menu to the left of the map
     private void showHelp() {
         String[] cmds = {"Commands:",
@@ -215,7 +211,8 @@ public class Game {
             }
         }
     }
-    public void savedata(){
+    //gives save data by reading enemy data
+    public void save(){
 	    PrintWriter out;
 	    try {
 		File F = new File("savefile.txt");
@@ -224,14 +221,15 @@ public class Game {
 	    catch (FileNotFoundException e){
 		    System.out.println("File not found. Please try again.");
 	    }
-	    world.save(out);
-	    player.save(out);
+	    world.savedata(out);
+	    player.savedata(out);
             for (Enemy e: enemies){
-		e.save(out);
+		e.savedata(out);
        	   }
 	   out.close(); 	
     }
-   public void loaddata(){
+   //loads data from player and enemy 
+   public void load(){
 	  Scanner in;
 	  try {
 		 File f = new File("savefile.txt");
