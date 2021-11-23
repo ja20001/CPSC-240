@@ -4,9 +4,8 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import ansi_terminal.*;
 import java.io.PrintWriter;
-
-
 import java.io.FileReader;
+import java.io.FileNotFoundException;
 
 
 public class Game {
