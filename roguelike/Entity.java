@@ -2,6 +2,7 @@
 // this class represents one moveable, drawable thing in the game
 
 import ansi_terminal.*;
+import java.io.PrintWriter;
 
 public class Entity {
     // the location of the entity in space
@@ -63,5 +64,13 @@ public class Entity {
         System.out.print(display);
         Terminal.reset();
     }
+
+    public void saveEntity (PrintWriter pw) {
+	super.save(out);    
+	pw.print(position.getRow());
+	pw.print(position.getCol());
+	pw.print(display);
+	pw.print(color);
+    }	
 }
 

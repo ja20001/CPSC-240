@@ -71,9 +71,6 @@ public class Enemy extends Character {
     public void savedata (PrintWriter out){
 	    super.savedata(out); //make method in char that saves row/col/HP
 	    out.println(name);
-	    out.println(row);
-	    out.println(col);
-	    out.println(hp);
 	    out.println(damage);
 	    out.println(protection);
     }

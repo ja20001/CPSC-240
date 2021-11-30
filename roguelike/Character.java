@@ -77,10 +77,9 @@ public abstract class Character extends Entity {
         return true;
     }
 
-    public static void savestuff () {
-	    int savedrow = row;
-	    int savedcol = col;
-	    int savedHPl = hp;
+    public void savestuff (PrintWriter pw) {
+	    super.save();
+	    pw.print(hp);
     }
 
 
