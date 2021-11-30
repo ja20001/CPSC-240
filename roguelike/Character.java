@@ -76,5 +76,13 @@ public abstract class Character extends Entity {
         Terminal.getKey();
         return true;
     }
+
+    public static void savestuff () {
+	    int savedrow = row;
+	    int savedcol = col;
+	    int savedHPl = hp;
+    }
+
+
 }
 
