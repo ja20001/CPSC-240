@@ -1,5 +1,5 @@
 // Player.java
-
+import java.io.PrintWriter;
 import ansi_terminal.*;
 
 public class Player extends Character {
@@ -49,6 +49,13 @@ public class Player extends Character {
 
     public Inventory getInventory() {
         return items;
+    }
+
+    public void savePlayer (PrintWriter pw) {
+	    super.save();
+	    pw.print(hp);
+	    pw.print(row);
+	    pw.print(col);
     }
 
 

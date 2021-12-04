@@ -1,7 +1,7 @@
 // Character.java
 
 import java.util.ArrayList;
-
+import java.io.PrintWriter;
 import ansi_terminal.*;
 
 public abstract class Character extends Entity {
@@ -77,9 +77,11 @@ public abstract class Character extends Entity {
         return true;
     }
 
-    public void savestuff (PrintWriter pw) {
+    public void saveChar (PrintWriter pw) {
 	    super.save();
 	    pw.print(hp);
+	    pw.print(row);
+	    pw.print(col);
     }
 
 
