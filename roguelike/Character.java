@@ -90,7 +90,7 @@ public abstract class Character extends Entity {
 	 *This method will save the data of each character for when the game is loaded again.
 	*/ 
     public void saveChar (PrintWriter pw) {
-	    super.save();
+	    super.save(pw);
 	    pw.print(hp);
 	    pw.print(row);
 	    pw.print(col);

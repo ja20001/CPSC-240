@@ -54,7 +54,7 @@ public class Player extends Character {
 	 * Saves player HP, row, and column onto a separate file
 	 */
     public void savePlayer (PrintWriter pw) {
-	    super.save();
+	    super.save(pw);
 	    pw.print(hp);
 	    pw.print(row);
 	    pw.print(col);

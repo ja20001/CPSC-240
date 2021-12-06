@@ -77,7 +77,7 @@ public class Entity {
     }
 
     public void saveEntity (PrintWriter pw) {
-	super.save(out);    
+	super.save(pw);    
 	pw.print(position.getRow());
 	pw.print(position.getCol());
 	pw.print(display);
