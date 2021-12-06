@@ -1,6 +1,6 @@
-// EnemyGenerator.java
-// this class contains a static method for creating enemies randomly
-
+/**
+ * This class will randomly create enemies.
+ */
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.List;

@@ -228,7 +228,10 @@ public class Game {
        	   }
 	   out.close(); 	
     }
-   //loads data from player and enemy 
+   //loads data from player and enemy
+   /**
+    * Loads data for the World, Player, and Entity classes
+    */ 
    public void load(){
 	  Scanner in;
 	  try {

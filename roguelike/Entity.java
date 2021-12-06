@@ -29,16 +29,27 @@ public class Entity {
     public Position getPosition() {
         return position;
     }
-
+	/**
+	 * Prints the row value associated with an entity object
+	 * @Return row value
+	 */
     public int getRow() {
         return position.getRow();
     }
-
+	/**
+	 * Prints the column value associated with an entity object
+ 	 * @Return column value 
+	 */
     public int getCol() {
         return position.getCol();
     }
 
-    // translate the entity in space, unless it would hit a wall
+    	/**
+	 * Adds the current row and column with the desired row and column, uses the new row/column values to move
+	 * Replaces original move with space
+	 * @Return true if moved
+	 * @Return false if move failed
+	 */
     public boolean move(int rowChange, int colChange, Room room) {
         // find new position
         int newRow = position.getRow() + rowChange;

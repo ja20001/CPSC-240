@@ -11,9 +11,9 @@ public class Player extends Character {
 
         // we can carry 100 pounds of items
         items = new Inventory(100);
-
-        // give them some basic stuff to start with
-        // TODO make up your own starting equipment!
+	/**
+	 * Creates default items of type Weapon, Armor, and Other
+	 */
         items.addAndEquip(new Item(ItemType.Weapon, "Sword of Baulr", 5, 12, 7));
         items.addAndEquip(new Item(ItemType.Armor, "Steel Strapped boots", 15, 20, 3));
 	items.addAndEquip(new Item(ItemType.Weapon, "Draglet Spear", 10, 10, 4));
@@ -50,7 +50,9 @@ public class Player extends Character {
     public Inventory getInventory() {
         return items;
     }
-
+	/**
+	 * Saves player HP, row, and column onto a separate file
+	 */
     public void savePlayer (PrintWriter pw) {
 	    super.save();
 	    pw.print(hp);

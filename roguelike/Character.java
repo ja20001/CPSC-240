@@ -21,7 +21,11 @@ public abstract class Character extends Entity {
     public abstract int getProtection();
     public abstract String getName();
 
-    // do damage to another player, returns if they died
+    /** do damage to another player, returns if they died
+     *Contains damage calculations, prevents negative damage, and prints character health and damage
+     *@return false if character is damaged but still alive
+     *@return true if character loses all health and dies
+     */
     private boolean dealDamage(Character other, Room room) {
         // this character does damage to the other character
         int damageDone = getDamage() - other.getProtection();
@@ -52,8 +56,9 @@ public abstract class Character extends Entity {
         }
     }
 
-    // this method performs one round of battle between two characters
-    // return false if the player has died aas a result
+    /**
+     * This method initiates combat between two Character objects.
+     */
     public boolean fight(Character other, Room room, ArrayList<Enemy> enemies) {
         // do damage to them first
         boolean killed = dealDamage(other, room);
@@ -63,12 +68,17 @@ public abstract class Character extends Entity {
         System.out.printf("Press any key to return...\n\r");
         Terminal.getKey();
 
-        // don't allow dead enemies to fight back
+        /**
+	 * This method prevents enemies declared dead from fighting back.
+	 */
         if (killed) {
             return true;
         }
 
-        // now take damage from them
+        /**
+	 * This method allows a character to receive damage in battle. 
+	 * @return false when damage is dealt.
+	 */
         if (other.dealDamage(this, room)) {
             return false;
         }
@@ -76,7 +86,9 @@ public abstract class Character extends Entity {
         Terminal.getKey();
         return true;
     }
-
+	/**
+	 *This method will save the data of each character for when the game is loaded again.
+	*/ 
     public void saveChar (PrintWriter pw) {
 	    super.save();
 	    pw.print(hp);
