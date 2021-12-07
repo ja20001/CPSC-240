@@ -4,6 +4,11 @@
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.List;
+
+/**
+ * Will randomly name and generate an enemy
+ * @Return Enemy name, row, col, health, damage, and protection
+ */
 public class EnemyGenerator {
     private static String[] enemyName = {"Goblin", "Stand", "The enemy", "Dragon", "Dog", "Evil Dog", "Even More Evil Dog", "Ogre", "Lizard"};
     private static Random rng = new Random(); 

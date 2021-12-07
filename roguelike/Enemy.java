@@ -67,12 +67,14 @@ public class Enemy extends Character {
             }
         }
     }
-
+	/**
+	 * Saves the name, damage and protection values of an enemy onto a separate file for later use
+	 */
     public void savedata (PrintWriter pw){
 	    super.savedata(pw); 
-	    out.println(name);
-	    out.println(damage);
-	    out.println(protection);
+	    pw.println(name);
+	    pw.println(damage);
+	    pw.println(protection);
     }
 }
 

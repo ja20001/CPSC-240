@@ -8,7 +8,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileNotFoundException;
 
-public class Game {
+public class Game implements Player, Enemy {
     private Room room;
     private Player player;
     private ArrayList<Box> boxes;
@@ -212,21 +212,24 @@ public class Game {
         }
     }
     //gives save data by reading enemy data
+    /**
+     * Saves all of the game's data to a readable file
+     */
     public void save(){
-	    PrintWriter out;
+	    PrintWriter pw;
 	    try {
 		File F = new File("savefile.txt");
-		out = new PrintWriter(F);
+		pw = new PrintWriter(F);
 	    }
 	    catch (FileNotFoundException e){
 		    System.out.println("File not found. Please try again.");
 	    }
-	    world.savedata(out);
-	    player.savedata(out);
+	    World.savedata(pw);
+	    Player.savedata(pw);
             for (Enemy e: enemies){
-		e.savedata(out);
+		e.savedata(pw);
        	   }
-	   out.close(); 	
+	   pw.close(); 	
     }
    //loads data from player and enemy
    /**
@@ -240,7 +243,7 @@ public class Game {
 	  } catch (FileNotFoundException e){
 		  System.out.println("File not found. Please try again.");
 	  }
-	 world = new World(in);
+	 World = new World(in);
 	 Player = new Player(in);
 	 while (in.hasNextLine()){
 		 Enemy e = new Enemy(pw);

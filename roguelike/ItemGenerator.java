@@ -18,7 +18,9 @@ public class ItemGenerator{
 	private static Random rng = new Random();
 	
 	
-
+/**
+ * Creates a random item with randomized weight, value, strength, type, and name 
+ */	
 	public static Item generate(){
 		int weight = rng.nextInt(20) + 1;
 		int value = rng.nextInt(30) + 1;

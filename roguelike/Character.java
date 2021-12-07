@@ -70,6 +70,7 @@ public abstract class Character extends Entity {
 
         /**
 	 * This method prevents enemies declared dead from fighting back.
+	 * @Return true if enemy is dead
 	 */
         if (killed) {
             return true;
@@ -87,7 +88,7 @@ public abstract class Character extends Entity {
         return true;
     }
 	/**
-	 *This method will save the data of each character for when the game is loaded again.
+	 *This method will save the data of each character to a file for when the game is loaded again.
 	*/ 
     public void saveChar (PrintWriter pw) {
 	    super.save(pw);

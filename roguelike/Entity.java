@@ -75,7 +75,9 @@ public class Entity {
         System.out.print(display);
         Terminal.reset();
     }
-
+   /**
+    * Saves the position, row, and color onto a separate file 
+    */
     public void saveEntity (PrintWriter pw) {    
 	pw.print(position.getRow());
 	pw.print(position.getCol());
