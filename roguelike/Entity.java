@@ -76,8 +76,7 @@ public class Entity {
         Terminal.reset();
     }
 
-    public void saveEntity (PrintWriter pw) {
-	super.save(pw);    
+    public void saveEntity (PrintWriter pw) {    
 	pw.print(position.getRow());
 	pw.print(position.getCol());
 	pw.print(display);

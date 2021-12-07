@@ -232,7 +232,7 @@ public class Game {
    /**
     * Loads data for the World, Player, and Entity classes
     */ 
-   public void load(){
+   public void load(PrintWriter pw){
 	  Scanner in;
 	  try {
 		 File f = new File("savefile.txt");
@@ -243,7 +243,7 @@ public class Game {
 	 world = new World(in);
 	 Player = new Player(in);
 	 while (in.hasNextLine()){
-		 Enemy e = new Enemy(in);
+		 Enemy e = new Enemy(pw);
 		 enemies.add(e);
 	 }
    } 
